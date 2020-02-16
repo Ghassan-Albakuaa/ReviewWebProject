@@ -32,5 +32,12 @@ namespace Review2.Models
             Image = image;
             Review = review;
         }
+        public ProductModel Find(int id)
+        {
+            ProductModel proModel = new ProductModel();
+            Id = id;
+            return proModel;
+        }
+
     }
 }

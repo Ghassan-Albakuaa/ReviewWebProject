@@ -8,5 +8,6 @@ namespace Review2.Repositories
     interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
+        IEnumerable<T> Find(int id);
     }
 }

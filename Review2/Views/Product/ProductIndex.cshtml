@@ -11,12 +11,47 @@
     <title>Index</title>
 </head>
 <body>
+
+
+
+
     <h1>Products</h1>
-    @foreach (var product in Model)
-    {
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+
+            </tr>
+        </thead>
+
+
+
+
+        @foreach (var product in Model)
+        {<tr>
+    <td>
         <h3>Name: @product.Name</h3>
-        <p>Description: @product.Description</p>
-        <hr />
-    }
+    </td>
+    <td>   <p>Description: @product.Description</p></td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = product.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = product.Id }) |
+        @Html.ActionLink("Vote", "Vote", new { id = product.Id }) |
+
+        @Html.ActionLink("Delete", "Delete", new { id = product.Id })
+    </td>
+</tr>
+          
+            }
+
+
+
 </body>
 </html>
