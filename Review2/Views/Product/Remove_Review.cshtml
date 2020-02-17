@@ -1,0 +1,33 @@
+﻿@model Review2.Models.ProductModel
+
+@{
+    ViewData["Title"] = "Remove_Review";
+}
+
+<h1>Remove_Review</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProductModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+       
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Review)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Review)
+        </dd>
+    </dl>
+    
+    <form asp-action="Remove_Review">
+        <input type="submit" value="Remove" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

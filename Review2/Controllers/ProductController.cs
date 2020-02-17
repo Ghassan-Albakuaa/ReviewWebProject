@@ -135,5 +135,28 @@ namespace Review2.Controllers
             }
         }
 
+        public ActionResult Remove_Review(int id)
+        {
+            var product = productRepo.Find(id);
+            return View(product);
+        }
+
+        // POST: product/Remove_Review/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Remove_Review(int id, ProductModel product)
+        {
+            try
+            {
+                // TODO: Add update logic here
+                productRepo.Remove_Review(id, product);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
     }
 }

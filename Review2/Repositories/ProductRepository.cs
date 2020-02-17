@@ -76,5 +76,12 @@ namespace Review2.Repositories
             Product.Review = product.Review;
 
         }
+
+        public void Remove_Review(int id, ProductModel product)
+        {
+            var Product = Find(id);
+         
+            Product.Review = "";
+        }
     }
 }

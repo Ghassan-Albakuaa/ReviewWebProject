@@ -18,5 +18,7 @@ namespace Review2.Repositories
         void Delete(int id);
 
         void Review(int id, T review);
+
+        void Remove_Review(int id, T product);
     }
 }
