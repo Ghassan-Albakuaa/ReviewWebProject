@@ -28,7 +28,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
-
+                <th>
+                    @Html.DisplayNameFor(model => model.Review)
+                </th>
             </tr>
         </thead>
 
@@ -37,20 +39,22 @@
 
         @foreach (var product in Model)
         {
-            <tr>
-                <td>
-                    <h3>Name: @product.Name</h3>
-                </td>
-                <td>   <p>Description: @product.Description</p></td>
+    <tr>
+        <td>
+            <h3> @product.Name</h3>
+        </td>
+        <td>   <p> @product.Description</p></td>
+        <td>   <p> @product.Review</p></td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = product.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = product.Id }) |
+            @Html.ActionLink("Vote", "Vote", new { id = product.Id }) |
 
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = product.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = product.Id }) |
-                    @Html.ActionLink("Vote", "Vote", new { id = product.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = product.Id }) |
 
-                    @Html.ActionLink("Delete", "Delete", new { id = product.Id })
-                </td>
-            </tr>
+            @Html.ActionLink("Add Review", "Review", new { id = product.Id })
+        </td>
+    </tr>
 
         }
 

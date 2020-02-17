@@ -16,9 +16,9 @@ namespace Review2.Repositories
         {
           productDictionary = new Dictionary<int, ProductModel>()
             {
-                {1, new ProductModel(1, "Pac-Man", "Yellow eating monster")},
-                {2, new ProductModel(2, "Gauntlet Legends", "Killing Game with Swords")},
-                {3, new ProductModel(3, "DigDug", "Dig to China till it blows up")}
+                {1, new ProductModel(1, "Pac-Man", "Yellow eating monster","","")},
+                {2, new ProductModel(2, "Gauntlet Legends", "Killing Game with Swords","","")},
+                {3, new ProductModel(3, "DigDug", "Dig to China till it blows up","","")}
 
             };
         }
@@ -64,8 +64,17 @@ namespace Review2.Repositories
         }
         public void Delete(int id)
         {
-            var Product = Find(id);
+            
             productDictionary.Remove(id);
+        }
+
+        public void Review(int id, ProductModel product)
+        {
+            var Product = Find(id);
+
+           
+            Product.Review = product.Review;
+
         }
     }
 }

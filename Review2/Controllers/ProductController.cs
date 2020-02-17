@@ -67,7 +67,7 @@ namespace Review2.Controllers
             return View(product);
         }
 
-        // POST: Cars/Edit/5
+        // POST: product/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, ProductModel product)
@@ -109,6 +109,31 @@ namespace Review2.Controllers
             }
         }
 
+
+
+
+        public ActionResult Review(int id)
+        {
+            var product = productRepo.Find(id);
+            return View(product);
+        }
+
+        // POST: product/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Review(int id, ProductModel product)
+        {
+            try
+            {
+                // TODO: Add update logic here
+                productRepo.Review(id, product);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
 
     }
 }
