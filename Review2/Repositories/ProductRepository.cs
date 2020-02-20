@@ -83,5 +83,15 @@ namespace Review2.Repositories
          
             Product.Review = "";
         }
+
+        public Review Find2(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(ProductModel product)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

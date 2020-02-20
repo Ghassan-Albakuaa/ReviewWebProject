@@ -13,6 +13,11 @@ namespace Review2.Models
         public string Description { get; set; }
         public string Image { get; set; }
         public string Review { get; set; }
+
+        public virtual Review ReviewPro { get; set; }
+
+        public virtual int ReviewId { get; set; }
+
         public ProductModel()
         {
 

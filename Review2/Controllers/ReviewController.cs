@@ -32,7 +32,7 @@ namespace Review2.Controllers
         // GET: /Details/
         public ActionResult Details(int id)
         {
-            var review = reviewRepo.Find(id);
+            var review = reviewRepo.Find2(id);
             return View(review);
         }
 
@@ -63,7 +63,7 @@ namespace Review2.Controllers
 
         public ActionResult Edit(int id)
         {
-            var review = reviewRepo.Find(id);
+            var review = reviewRepo.Find2(id);
             return View(review);
         }
 
@@ -75,7 +75,7 @@ namespace Review2.Controllers
             try
             {
                 // TODO: Add update logic here
-                reviewRepo.Update(id, review);
+                reviewRepo.Update( review);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -88,7 +88,7 @@ namespace Review2.Controllers
         // GET: product/Delete/
         public ActionResult Delete(int id)
         {
-            var review = reviewRepo.Find(id);
+            var review = reviewRepo.Find2(id);
             return View(review);
         }
 
@@ -111,7 +111,7 @@ namespace Review2.Controllers
 
         public ActionResult Review(int id)
         {
-            var review = reviewRepo.Find(id);
+            var review = reviewRepo.Find2(id);
             return View(review);
         }
 
@@ -134,7 +134,7 @@ namespace Review2.Controllers
 
         public ActionResult Remove_Review(int id)
         {
-            var review = reviewRepo.Find(id);
+            var review = reviewRepo.Find2(id);
             return View(review);
         }
 

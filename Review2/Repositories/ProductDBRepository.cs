@@ -1,5 +1,6 @@
 ﻿using Review2.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,7 +39,7 @@ namespace Review2.Repositories
 
 
 
-    public void Update(int id, ProductModel product)
+    public void Update(ProductModel product)
     {
             db.Update(product);
             db.SaveChanges();
@@ -71,6 +72,13 @@ namespace Review2.Repositories
 
         Product.Review = "";
     }
-}
+
+        public Review Find2(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+       
+    }
 }
 

@@ -21,7 +21,7 @@ namespace Review2.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=MyProductDB;Trusted_Connection=True;";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=MyProductDB2;Trusted_Connection=True;";
 
             optionsBuilder.UseSqlServer(connectionString)
                           .UseLazyLoadingProxies();
@@ -38,7 +38,8 @@ namespace Review2.Models
                     Name = "Pac-Man",
                     Description = "Yellow fruit-eating monster",
                     Review = "I bought this arcade game, now I hate ghosts!",
-                    Image = "/img/pacman.jpg"
+                    Image = "/img/pacman.jpg" ,
+                    ReviewId = 1
                 },
                 new ProductModel
                 {
@@ -46,7 +47,8 @@ namespace Review2.Models
                     Name = "Gauntlet Legends",
                     Description = "Save the Realms from certain doom",
                     Review = "Wtf I love this game?",
-                    Image = "/img/GauntletLegends.jpg"
+                    Image = "/img/GauntletLegends.jpg",
+                     ReviewId = 1
                 },
                 new ProductModel
                 {
@@ -54,10 +56,37 @@ namespace Review2.Models
                     Name = "DigDug",
                     Description = "Dig and dug",
                     Review = "Being inflated till you explode has got to hurt!",
-                    Image = "/img/digdug.jpg"
+                    Image = "/img/digdug.jpg" ,
+                    ReviewId = 3
                 }
                 );
-        //  base.OnConfiguring(modelBuilder);
+
+
+
+            modelBuilder.Entity<Review>().HasData(
+                new Review()
+                {
+                    Id = 1,
+                    Description = "hlkjhlkjhkjlh",
+                    Name = "ghassan"
+                },
+                  new Review()
+                  {
+                      Id = 2,
+                      Description = "hlkjhlkjhkjlh",
+                    Name = "ghassan"
+                  },
+
+                new Review()
+                {
+                    Id = 3,
+                    Description = "nbgkljglkjghlkjhl",
+                     Name = "ali"
+                });
+
+            base.OnModelCreating(modelBuilder);
+
+            //  base.OnConfiguring(modelBuilder);
         }
     }
 }

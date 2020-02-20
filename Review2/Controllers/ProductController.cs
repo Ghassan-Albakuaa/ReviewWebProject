@@ -66,12 +66,12 @@ namespace Review2.Controllers
         // POST: product/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ProductModel product)
+        public ActionResult Edit( ProductModel product)
         {
             try
             {
                 // TODO: Add update logic here
-                productRepo.Update(id, product);
+                productRepo.Update(product);
                 return RedirectToAction(nameof(Index));
             }
             catch

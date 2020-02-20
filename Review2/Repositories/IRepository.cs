@@ -10,10 +10,13 @@ namespace Review2.Repositories
  public   interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
-        IEnumerable Find(int id);
+        ProductModel Find(int id);
+
+       Review Find2(int id);
+
         void Add(int id,T product);
 
-        void Update(int id, T product);
+        void Update(T product);
 
         void Delete(int id);
 

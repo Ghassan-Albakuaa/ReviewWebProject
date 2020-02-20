@@ -9,8 +9,9 @@ namespace Review2.Models
     {
         public int Id { get; set; }
         public string Description { get; set; }
+        public string Name { get; set; }
         public string Image { get; set; }
-        
+        public virtual ICollection<ProductModel> Product { get; set; }
         public Review()
         {
 

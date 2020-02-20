@@ -1,5 +1,6 @@
 ﻿using Review2.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -98,7 +99,21 @@ namespace Review2.Repositories
             throw new NotImplementedException();
         }
 
+       
+
+       
+
         ProductModel IRepository<Review>.Find(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Review Find2(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Review product)
         {
             throw new NotImplementedException();
         }
