@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -39,5 +40,9 @@ namespace Review2.Models
             return proModel;
         }
 
+        public static implicit operator DbSet<object>(ProductModel v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

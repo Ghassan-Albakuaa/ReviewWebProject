@@ -10,11 +10,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Review2.Models;
 using Review2.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Review2
 {
     public class Startup
     {
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,8 +30,18 @@ namespace Review2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton<IRepository<ProductModel>, ProductRepository>();
-            
+            services.AddScoped<IRepository<ProductModel>, ProductDBRepository>();
+            services.AddScoped<IRepository<Review>, ReviewDBpository>();
+         
+
+
+            services.AddDbContext<ProductDbContext>(options =>
+                {
+                    var config2 = Configuration.GetConnectionString("DefaultConnection");
+                    options.UseSqlServer("config2");
+                    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+                   
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
